@@ -101,13 +101,10 @@ class VacuumCleanerModel(Model):
             self.all_clean += 1
 
 
-# Definimos el tamaño del Grid
 GRID_SIZE = 40
 
-# Definimos el número máximo de generaciones a correr
 MAX_GENERATIONS = 500
 
-# Registramos el tiempo de inicio y ejecutamos la simulación
 start_time = time.time()
 model = VacuumCleanerModel(GRID_SIZE, GRID_SIZE, 120, 0.5)
 i = 1
@@ -126,10 +123,8 @@ model.dirtyCells()
 model.if_is_all_clean()
 
     
-# Imprimimos el tiempo que le tomó correr al modelo.
 print('Tiempo de ejecución:', str(datetime.timedelta(seconds=(time.time() - start_time))))
 
-# Obtenemos la información que almacenó el colector, este nos entregará un DataFrame de pandas que contiene toda la información.
 all_grid = model.datacollector.get_model_vars_dataframe()
 
 fig, axs = plt.subplots(figsize=(7,7))
