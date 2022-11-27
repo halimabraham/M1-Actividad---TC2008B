@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 plt.rcParams["animation.html"] = "jshtml"
 matplotlib.rcParams['animation.embed_limit'] = 2**128
+from matplotlib import colors
 
 import numpy as np
 import pandas as pd
@@ -123,7 +124,7 @@ model.dirtyCells()
 model.if_is_all_clean()
 
     
-print('Tiempo de ejecución:', str(datetime.timedelta(seconds=(time.time() - start_time))))
+print('Tiempo de ejecición', str(datetime.timedelta(seconds=(time.time() - start_time))))
 
 all_grid = model.datacollector.get_model_vars_dataframe()
 
